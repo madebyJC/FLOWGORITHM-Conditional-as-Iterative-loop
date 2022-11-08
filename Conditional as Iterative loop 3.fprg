@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="JANCARLOPAREDES"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-07 08:45:46 pm"/>
+        <attribute name="created" value="SkFOQ0FSTE9QQVJFREVTO0RFU0tUT1AtNzQ1R1ZOMzsyMDIyLTExLTA3OzA4OjM3OjEyIHBtOzM0NzU="/>
+        <attribute name="edited" value="SkFOQ0FSTE9QQVJFREVTO0RFU0tUT1AtNzQ1R1ZOMzsyMDIyLTExLTA3OzA4OjQ1OjQ2IHBtOzE7MzU4OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="loop, limitInput, voltageInput, fbCount, rbCount" type="Integer" array="False" size=""/>
+            <assign variable="fbCount" expression="0"/>
+            <assign variable="rbCount" expression="0"/>
+            <output expression="&quot;Enter the total input for the voltage: &quot;" newline="True"/>
+            <input variable="limitInput"/>
+            <for variable="loop" start="1" end="limitInput" direction="inc" step="1">
+                <output expression="&quot;Input the voltage value: &quot;" newline="True"/>
+                <input variable="voltageInput"/>
+                <while expression="voltageInput &gt; 5">
+                    <output expression="&quot;The voltage value exceeds Forward Bias! Input another voltage value: &quot;" newline="True"/>
+                    <input variable="voltageInput"/>
+                </while>
+                <if expression="voltageInput &gt;= 3 &amp;&amp;&#13;&#10;voltageInput &lt;= 5">
+                    <then>
+                        <output expression="&quot;Forward Bias&quot;" newline="True"/>
+                        <assign variable="fbCount" expression="fbCount + 1"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Reverse Bias&quot;" newline="True"/>
+                        <assign variable="rbCount" expression="rbCount + 1"/>
+                    </else>
+                </if>
+            </for>
+            <output expression="&quot;Total Forward Bias: &quot; &amp; fbCount" newline="True"/>
+            <output expression="&quot;Total Reverse Bias: &quot; &amp; rbCount" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

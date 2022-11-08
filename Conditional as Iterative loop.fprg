@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="JANCARLOPAREDES"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-07 10:02:06 pm"/>
+        <attribute name="created" value="SkFOQ0FSTE9QQVJFREVTO0RFU0tUT1AtNzQ1R1ZOMzsyMDIyLTExLTA3OzA3OjM2OjEwIHBtOzM0NzE="/>
+        <attribute name="edited" value="SkFOQ0FSTE9QQVJFREVTO0RFU0tUT1AtNzQ1R1ZOMzsyMDIyLTExLTA3OzEwOjAyOjA2IHBtOzQ7MzU3NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="startInput, endInput, stepInput, loop" type="Integer" array="False" size=""/>
+            <declare name="name" type="String" array="False" size=""/>
+            <assign variable="name" expression="&quot;Jan Carlo&quot;"/>
+            <output expression="&quot;Input the 'start value' of loop: &quot;" newline="True"/>
+            <input variable="startInput"/>
+            <output expression="&quot;Input the 'end value' of the loop: &quot;" newline="True"/>
+            <input variable="endInput"/>
+            <output expression="&quot;Input the 'step value' of the loop&quot;" newline="True"/>
+            <input variable="stepInput"/>
+            <if expression="startInput &gt; endInput">
+                <then>
+                    <output expression="&quot;Error! the start value is greater than the end value&quot;" newline="True"/>
+                </then>
+                <else>
+                    <for variable="loop" start="startInput" end="endInput" direction="inc" step="stepInput">
+                        <output expression="name" newline="True"/>
+                    </for>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
